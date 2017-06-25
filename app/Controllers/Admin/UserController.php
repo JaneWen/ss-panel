@@ -20,7 +20,7 @@ class UserController extends AdminController
         $users->setPath('/admin/user');
         return $this->view()->assign('users', $users)->display('admin/user/index.tpl');
     }
-
+	
     public function edit($request, $response, $args)
     {
         $id = $args['id'];
@@ -29,7 +29,8 @@ class UserController extends AdminController
 
         }
         $method = Node::getCustomerMethod();
-        return $this->view()->assign('user', $user)->assign('method', $method)->display('admin/user/edit.tpl');
+		$nodes = Node::where('level','<=',$user->level)->orderBy('info',desc);
+        return $this->view()->assign('user', $user)->assign('method', $method)->assign('nodes', $nodes)->display('admin/user/edit.tpl');
     }
 
     public function update($request, $response, $args)
