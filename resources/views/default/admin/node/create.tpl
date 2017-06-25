@@ -74,7 +74,19 @@
                                         </div>
 
                                     </div>
+									<div class="form-group">
+                                        <label for="level" class="col-sm-3 control-label">VIP等级</label>
 
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="level">
+                                                <option value="0" selected="selected">免费</option>
+                                                <option value="1">白银VIP</option>
+												<option value="2">黄金VIP</option>
+												<option value="3">铂金VIP</option>
+												<option value="4">钻石VIP</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="method" class="col-sm-3 control-label">自定义加密</label>
 
@@ -160,6 +172,7 @@
                     name: $("#name").val(),
                     server: $("#server").val(),
                     method: $("#method").val(),
+					level: $("#level").val(),
                     custom_method: $("#custom_method").val(),
                     rate: $("#rate").val(),
                     info: $("#info").val(),
