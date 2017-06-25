@@ -90,6 +90,19 @@
                                         </div>
                                     </div>
 
+									<div class="form-group">
+                                        <label for="level" class="col-sm-3 control-label">VIP等级</label>
+
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="level">
+                                                <option value="0" {if $user->level==0}selected="selected"{/if}>免费</option>
+                                                <option value="1" {if $user->level==1}selected="selected"{/if}>白银VIP</option>
+												<option value="2" {if $user->level==2}selected="selected"{/if}>黄金VIP</option>
+												<option value="3" {if $user->level==3}selected="selected"{/if}>铂金VIP</option>
+												<option value="4" {if $user->level==4}selected="selected"{/if}>钻石VIP</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </fieldset>
                                 <fieldset class="col-sm-6">
                                     <legend>ShadowSocks连接信息</legend>
