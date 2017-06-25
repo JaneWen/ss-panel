@@ -29,7 +29,7 @@ class UserController extends AdminController
 
         }
         $method = Node::getCustomerMethod();
-		$nodes = Node::where('level','<=',$user->level)->orderBy('info',desc);
+		$nodes = Node::where('level','=',$user->level)->orderBy('info',desc)->get();
         return $this->view()->assign('user', $user)->assign('method', $method)->assign('nodes', $nodes)->display('admin/user/edit.tpl');
     }
 
