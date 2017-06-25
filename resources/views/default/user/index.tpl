@@ -103,6 +103,8 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <dl class="dl-horizontal">
+							<dt>服务器</dt>
+                            <dd>{$node->server}</dd>
                             <dt>端口</dt>
                             <dd>{$user->port}</dd>
                             <dt>密码</dt>
