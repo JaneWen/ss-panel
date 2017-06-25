@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\InviteCode;
 use App\Models\User;
+use App\Models\Node;
 use App\Services\Auth;
 use App\Services\Auth\EmailVerify;
 use App\Services\Config;
@@ -166,6 +167,7 @@ class AuthController extends BaseController
         $user->u = 0;
         $user->d = 0;
 		$user->level = 0;
+		$user->node_id = self::getFreeNode();
         $user->transfer_enable = Tools::toGB(Config::get('defaultTraffic'));
         $user->invite_num = Config::get('inviteNum');
         $user->reg_ip = Http::getClientIP();
@@ -218,5 +220,15 @@ class AuthController extends BaseController
         Auth::logout();
         return $this->redirect($response, '/auth/login');
     }
-
+	public function getFreeNode()
+	{
+		$node = Node::where('level',0)->first();
+		if(node == null)
+		{
+			return null;
+		}else
+		{
+			return node->id;
+	}
+	
 }
