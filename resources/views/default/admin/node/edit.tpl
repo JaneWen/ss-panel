@@ -79,11 +79,11 @@
 
                                         <div class="col-sm-9">
                                             <select class="form-control" id="level">
-                                                <option value="0" selected="selected">免费</option>
-                                                <option value="1">白银VIP</option>
-												<option value="2">黄金VIP</option>
-												<option value="3">铂金VIP</option>
-												<option value="4">钻石VIP</option>
+                                                <option value="0" {if $node->level==0}selected="selected"{/if}>免费</option>
+                                                <option value="1" {if $node->level==1}selected="selected"{/if}>白银VIP</option>
+												<option value="2" {if $node->level==2}selected="selected"{/if}>黄金VIP</option>
+												<option value="3" {if $node->level==3}selected="selected"{/if}>铂金VIP</option>
+												<option value="4" {if $node->level==4}selected="selected"{/if}>钻石VIP</option>
                                             </select>
                                         </div>
                                     </div>
