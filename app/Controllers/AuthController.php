@@ -36,6 +36,17 @@ class AuthController extends BaseController
     const VerifyEmailWrongEmail = 701;
     const VerifyEmailExist = 702;
 
+	public function getFreeNode()
+	{
+		$node = Node::where('level',0)->first();
+		if(node == null)
+		{
+			return null;
+		}else
+		{
+			return node->id;
+	}
+	
     public function login($request, $response, $args)
     {
         return $this->view()->display('auth/login.tpl');
@@ -220,15 +231,5 @@ class AuthController extends BaseController
         Auth::logout();
         return $this->redirect($response, '/auth/login');
     }
-	public function getFreeNode()
-	{
-		$node = Node::where('level',0)->first();
-		if(node == null)
-		{
-			return null;
-		}else
-		{
-			return node->id;
-	}
 	
 }
