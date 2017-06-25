@@ -214,6 +214,7 @@
                     transfer_enable: $("#transfer_enable").val(),
                     invite_num: $("#invite_num").val(),
                     method: $("#method").val(),
+					level: $("#level").val(),
                     enable: $("#enable").val(),
                     is_admin: $("#is_admin").val(),
                     ref_by: $("#ref_by").val()
