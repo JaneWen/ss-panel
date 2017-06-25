@@ -50,6 +50,7 @@ class UserController extends AdminController
         $user->invite_num = $request->getParam('invite_num');
         $user->method = $request->getParam('method');
 		$user->level = $request->getParam('level');
+		$user->node_id = $request->getParam('node_id');
         $user->enable = $request->getParam('enable');
         $user->is_admin = $request->getParam('is_admin');
         $user->ref_by = $request->getParam('ref_by');

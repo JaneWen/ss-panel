@@ -106,6 +106,18 @@
                                 </fieldset>
                                 <fieldset class="col-sm-6">
                                     <legend>ShadowSocks连接信息</legend>
+									
+									<div class="form-group">
+                                        <label class="col-sm-3 control-label">服务器</label>
+
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="node_id">
+                                            {foreach $nodes as $node}
+                                               <option value="{$node->id}" {if $user->node_id==$node->id}selected="selected"{/if} >{$node->info}</option>  
+                                            {/foreach}
+                                            </select>  
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">连接端口</label>
 
@@ -215,6 +227,7 @@
                     invite_num: $("#invite_num").val(),
                     method: $("#method").val(),
 					level: $("#level").val(),
+					node_id:$("#node_id").val(),
                     enable: $("#enable").val(),
                     is_admin: $("#is_admin").val(),
                     ref_by: $("#ref_by").val()
