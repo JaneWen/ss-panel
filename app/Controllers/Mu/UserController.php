@@ -17,10 +17,10 @@ class UserController extends BaseController
     public function index($request, $response, $args)
     {
         $users = User::all();
-				
+	
 		$params = $request->getQueryParams();
-        if (!sset($params['node'])) {
-            $node_id = $params['node'];
+        if (isset($params["node"])) {
+            $node_id = $params["node"];
 			$users = User::where('node_id',$node_id)->get();
         }
         
