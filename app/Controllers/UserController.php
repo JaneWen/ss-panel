@@ -39,7 +39,7 @@ class UserController extends BaseController
             $msg = "在后台修改用户中心公告...";
         }
 		$user = Auth::getUser();
-		$node = Node::where('id',$user->node_id)->get();
+		$node = Node::where('id',$user->node_id)->first();
         return $this->view()->assign('msg', $msg)->assign('node', $node)->display('user/index.tpl');
     }
 
