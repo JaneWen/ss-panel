@@ -38,7 +38,11 @@
                                         <a href="./node/{$node->id}" class="product-title">{$node->name} <span
                                                     class="label label-info pull-right">{$node->status}</span></a>
                                         <p>
-                                            {$node->info}
+                                            <a>{$node->info} <span class="label label-info pull-right">
+											{if $node->level==0}免费服务器{/if}{if $node->level==1}白银VIP服务器{/if}
+											{if $node->level==2}黄金VIP服务器{/if}{if $node->level==3}铂金VIP服务器{/if}
+											{if $node->level==4}钻石VIP服务器{/if}
+											</span></a>
                                         </p>
                                     </div>
                                 </li><!-- /.item -->
