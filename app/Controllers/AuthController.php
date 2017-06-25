@@ -39,12 +39,13 @@ class AuthController extends BaseController
 	public function getFreeNode()
 	{
 		$node = Node::where('level',0)->first();
-		if(node == null)
+		if($node == null)
 		{
 			return null;
 		}else
 		{
-			return node->id;
+			return $node->id;
+		}
 	}
 	
     public function login($request, $response, $args)
