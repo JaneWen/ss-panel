@@ -51,6 +51,7 @@ $app->group('/user', function () {
     $this->post('/password', 'App\Controllers\UserController:updatePassword');
     $this->post('/sspwd', 'App\Controllers\UserController:updateSsPwd');
     $this->post('/method', 'App\Controllers\UserController:updateMethod');
+	$this->post('/node', 'App\Controllers\UserController:updateNode');
     $this->get('/sys', 'App\Controllers\UserController:sys');
     $this->get('/trafficlog', 'App\Controllers\UserController:trafficLog');
     $this->get('/trafficlog/{nid}', 'App\Controllers\UserController:trafficLog');

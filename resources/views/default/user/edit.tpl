@@ -96,6 +96,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="form-horizontal">
+						
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">连接密码</label>
 
@@ -125,7 +126,23 @@
                                     </div>
                                 </div>
                             </div>
+							
+							<div class="form-group">
+                                <label class="col-sm-3 control-label">连接服务器</label>
 
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <select class="form-control" id="nodes">
+                                        {foreach $nodes as $node}
+                                           <option value="{$node->id}" {if $user->node_id==$node->id}selected="selected"{/if} >{$node->info}</option>  
+                                        {/foreach}
+                                        </select>  
+                                        <div class="input-group-btn">
+                                            <button type="submit" id="nodes-update" class="btn btn-primary">修改</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="box-footer"></div>
                     </div>
@@ -213,6 +230,33 @@
                 dataType: "json",
                 data: {
                     method: $("#method").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#ss-msg-success").show();
+                        $("#ss-msg-success-p").html(data.msg);
+                    } else {
+                        $("#ss-msg-error").show();
+                        $("#ss-msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#nodes-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "node",
+                dataType: "json",
+                data: {
+                    node: $("#nodes").val()
                 },
                 success: function (data) {
                     if (data.ret) {

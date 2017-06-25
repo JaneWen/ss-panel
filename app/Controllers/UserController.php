@@ -87,7 +87,9 @@ class UserController extends BaseController
     public function edit($request, $response, $args)
     {
         $method = Node::getCustomerMethod();
-        return $this->view()->assign('method', $method)->display('user/edit.tpl');
+		$user = Auth::getUser();
+		$nodes = Node::where('level','<=',$user->level)->orderBy('info',desc)->get();
+        return $this->view()->assign('method', $method)->assign('nodes', $nodes)->display('user/edit.tpl');
     }
 
 
@@ -176,6 +178,15 @@ class UserController extends BaseController
         $method = $request->getParam('method');
         $method = strtolower($method);
         $user->updateMethod($method);
+        $res['ret'] = 1;
+        return $this->echoJson($response, $res);
+    }
+	
+	public function updateNode($request, $response, $args)
+    {
+        $user = Auth::getUser();
+        $node = $request->getParam('node');
+        $user->updateNode($node);
         $res['ret'] = 1;
         return $this->echoJson($response, $res);
     }

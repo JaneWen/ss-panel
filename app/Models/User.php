@@ -87,6 +87,12 @@ class User extends Model
         $this->save();
     }
 
+	public function updateNode($node)
+    {
+        $this->node_id = $node;
+        $this->save();
+    }
+	
     public function addInviteCode()
     {
         $uid = $this->attributes['id'];
