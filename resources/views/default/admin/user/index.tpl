@@ -14,6 +14,16 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
+			    <div class="box form-inline">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">用户名</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" id="user_name" value="">
+                        </div>
+                    </div>
+                  
+                    <button type="submit" class="btn btn-primary" id="user-search">搜索</button>
+                </div>
                 <div id="msg-success" class="alert alert-success alert-dismissable" style="display: none;">
                     <button type="button" class="close" id="ok-close" aria-hidden="true">&times;</button>
                     <h4><i class="icon fa fa-info"></i> 成功!</h4>
@@ -123,5 +133,11 @@
         });
     //})
 </script>
-
+<script>
+    $(document).ready(function () {
+        $("#user-search").click(function () {
+            window.setTimeout("location.href='/admin/user/"+$("#user_name").val()+"'", 500);
+        })
+    })
+</script>
 {include file='admin/footer.tpl'}

@@ -104,6 +104,7 @@ $app->group('/admin', function () {
 
     // User Mange
     $this->get('/user', 'App\Controllers\Admin\UserController:index');
+	$this->get('/user/{username}', 'App\Controllers\Admin\UserController:index');
     $this->get('/user/{id}/edit', 'App\Controllers\Admin\UserController:edit');
     $this->put('/user/{id}', 'App\Controllers\Admin\UserController:update');
     $this->delete('/user/{id}', 'App\Controllers\Admin\UserController:delete');
