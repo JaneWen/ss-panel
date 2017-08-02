@@ -17,11 +17,8 @@
 			    <div class="box form-inline">
                     <div class="form-group">
                         <label class="control-label">用户名:</label>
-                        <div>
-                            <input class="form-control" id="user_name" value="">
-                        </div>
+                        <input class="form-control" id="user_name" value="">
                     </div>
-                  
                     <button type="submit" class="btn btn-primary" id="user-search">搜索</button>
                 </div>
             </div>
