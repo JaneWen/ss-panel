@@ -19,7 +19,7 @@ class UserController extends AdminController
 		
 		$users = User::orderBy('id', 'desc');
         if (isset($args['username'])) {
-            $users->where('user_name','like', '%'+$args['username']+'%');
+            $users->where('user_name','like', $args['username']);
         }
 		
         $users = $users->paginate(15, ['*'], 'page', $pageNum);
