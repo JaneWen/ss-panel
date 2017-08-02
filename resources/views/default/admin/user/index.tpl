@@ -13,11 +13,11 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
 			    <div class="box form-inline">
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">用户名</label>
-                        <div class="col-sm-9">
+                        <label class="control-label">用户名:</label>
+                        <div>
                             <input class="form-control" id="user_name" value="">
                         </div>
                     </div>
