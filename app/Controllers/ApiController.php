@@ -54,12 +54,15 @@ class ApiController extends BaseController
         }
         $tokenStr = Tools::genToken();
         $storage = Factory::createTokenStorage();
-        $expireTime = time() + 3600*24*7;
+        $createTime = time();
+        $expireTime = $createTime + 3600*24*7;
         if($storage->store($tokenStr,$user,$expireTime)){
             $res['ret'] = 1;
             $res['msg'] = "ok";
             $res['data']['token'] = $tokenStr;
-            $res['data']['user_id'] = $user->id;
+            $res['data']['userId'] = $user->id;
+            $res['data']['createTime'] = $createTime;
+            $res['data']['expireTime'] = $expireTime;
             return $this->echoJson($response,$res);
         }
         $res['ret'] = 0;
