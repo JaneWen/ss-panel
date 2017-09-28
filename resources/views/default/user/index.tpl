@@ -107,6 +107,8 @@
                             <dd>{$node->server}</dd>
                             <dt>端口</dt>
                             <dd>{$user->port}</dd>
+                            <dt>加速端口</dt>
+                            <dd>{$user->kcpturn_port}</dd>
                             <dt>密码</dt>
                             <dd>{$user->passwd}</dd>
                             <dt>自定义加密方式</dt>
