@@ -53,6 +53,7 @@ class UserController extends AdminController
             $user->passwd = $request->getParam('passwd');
         }
         $user->port = $request->getParam('port');
+        $user->kcpturn_port = $request->getParam('kcpturn_port');
         $user->transfer_enable = Tools::toGB($request->getParam('transfer_enable'));
         $user->invite_num = $request->getParam('invite_num');
         $user->method = $request->getParam('method');

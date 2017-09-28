@@ -125,7 +125,13 @@
                                             <input class="form-control" id="port" type="number" value="{$user->port}">
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">加速端口</label>
 
+                                        <div class="col-sm-9">
+                                            <input class="form-control" id="kcpturn_port" type="number" value="{$user->kcpturn_port}">
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">连接密码</label>
 
@@ -222,6 +228,7 @@
                     email: $("#email").val(),
                     pass: $("#pass").val(),
                     port: $("#port").val(),
+                    kcpturn_port:$("#kcpturn_port").val(),
                     passwd: $("#passwd").val(),
                     transfer_enable: $("#transfer_enable").val(),
                     invite_num: $("#invite_num").val(),
